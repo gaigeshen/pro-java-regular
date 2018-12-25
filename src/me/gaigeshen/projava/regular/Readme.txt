@@ -24,18 +24,18 @@ A dot matches any single character; it would match, for example, "a" or "1".
 
 The following tables lists several regular expressions and describes which pattern they would match.
 ============================================
-Regex				Matches
+Regex               Matches
 --------------------------------------------
-this is text 		Matches exactly "this is text"
+this is text        Matches exactly "this is text"
 --------------------------------------------
-this\s+is\s+text 	Matches the word "this" followed by one or more whitespace characters
-					followed by the word "is" followed by one or more whitespace characters followed by the word "text".
+this\s+is\s+text    Matches the word "this" followed by one or more whitespace characters
+                    followed by the word "is" followed by one or more whitespace characters followed by the word "text".
 --------------------------------------------
-^\d+(\.\d+)? 		^ defines that the patter must start at beginning of a new line.
-					\d+ matches one or several digits.
-					The ? makes the statement in brackets optional.
-					\. matches ".", parentheses are used for grouping.
-					Matches for example "5", "1.5" and "2.21".
+^\d+(\.\d+)?        ^ defines that the patter must start at beginning of a new line.
+                    \d+ matches one or several digits.
+                    The ? makes the statement in brackets optional.
+                    \. matches ".", parentheses are used for grouping.
+                    Matches for example "5", "1.5" and "2.21".
 ============================================
 
 
@@ -49,68 +49,68 @@ Unfortunately each language supports regular expressions slightly different.
 2.1. Common matching symbols
 
 ============================================
-Regular Expression	Description
+Regular Expression  Description
 --------------------------------------------
-.					Matches any character
+.                   Matches any character
 --------------------------------------------
-^regex				Finds regex that must match at the beginning of the line.
+^regex              Finds regex that must match at the beginning of the line.
 --------------------------------------------
-regex$				Finds regex that must match at the end of the line.
+regex$              Finds regex that must match at the end of the line.
 --------------------------------------------
-[abc]				Set definition, can match the letter a or b or c.
+[abc]               Set definition, can match the letter a or b or c.
 --------------------------------------------
-[abc][vz]			Set definition, can match a or b or c followed by either v or z.
+[abc][vz]           Set definition, can match a or b or c followed by either v or z.
 --------------------------------------------
-[^abc]				When a caret appears as the first character inside square brackets,
-					it negates the pattern. This pattern matches any character except a or b or c.
+[^abc]              When a caret appears as the first character inside square brackets,
+                    it negates the pattern. This pattern matches any character except a or b or c.
 --------------------------------------------
-[a-d1-7]			Ranges: matches a letter between a and d and figures from 1 to 7, but not d1.
+[a-d1-7]            Ranges: matches a letter between a and d and figures from 1 to 7, but not d1.
 --------------------------------------------
-X|Z					Finds X or Z.
+X|Z                 Finds X or Z.
 --------------------------------------------
-XZ					Finds X directly followed by Z.
+XZ                  Finds X directly followed by Z.
 --------------------------------------------
-$					Checks if a line end follows.
+$                   Checks if a line end follows.
 ============================================
 
 2.2. Meta characters
 ============================================
-Regular Expression		Description
+Regular Expression      Description
 --------------------------------------------
-\d						Any digit, short for [0-9]
+\d                      Any digit, short for [0-9]
 --------------------------------------------
-\D						A non-digit, short for [^0-9]
+\D                      A non-digit, short for [^0-9]
 --------------------------------------------
-\s						A whitespace character, short for [ \t\n\x0b\r\f]
+\s                      A whitespace character, short for [ \t\n\x0b\r\f]
 --------------------------------------------
-\S						A non-whitespace character
+\S                      A non-whitespace character
 --------------------------------------------
-\w						A word character, short for [a-zA-Z_0-9]
+\w                      A word character, short for [a-zA-Z_0-9]
 --------------------------------------------
-\W						A non-word character [^\w]
+\W                      A non-word character [^\w]
 --------------------------------------------
-\S+						Several non-whitespace characters
+\S+                     Several non-whitespace characters
 --------------------------------------------
-\b						Matches a word boundary where a word character is [a-zA-Z0-9_]
+\b                      Matches a word boundary where a word character is [a-zA-Z0-9_]
 ============================================
 
 2.3. Quantifier
 ============================================
-Regular Expression		Description	Examples
+Regular Expression      Description
 --------------------------------------------
-*						Occurs zero or more times, is short for {0,}
+*                       Occurs zero or more times, is short for {0,}
 --------------------------------------------
-+						Occurs one or more times, is short for {1,}
++                       Occurs one or more times, is short for {1,}
 --------------------------------------------
-?						Occurs no or one times, ? is short for {0,1}.
+?                       Occurs no or one times, ? is short for {0,1}.
 --------------------------------------------
-{X}						Occurs X number of times, {} describes the order of the preceding liberal
+{X}                     Occurs X number of times, {} describes the order of the preceding liberal
 --------------------------------------------
-{X,Y}					Occurs between X and Y times,
+{X,Y}                   Occurs between X and Y times,
 --------------------------------------------
-*?						? after a quantifier makes it a reluctant quantifier.
-						It tries to find the smallest match.
-						This makes the regular expression stop at the first match.
+*?                      ? after a quantifier makes it a reluctant quantifier.
+                        It tries to find the smallest match.
+                        This makes the regular expression stop at the first match.
 ============================================
 
 2.4. Grouping and back reference
@@ -171,16 +171,6 @@ For advanced regular expressions the java.util.regex.Pattern and java.util.regex
 You first create a Pattern object which defines the regular expression.
 This Pattern object allows you to create a Matcher object for a given string.
 This Matcher object then allows you to do regex operations on a String.
-
-
-
-
-
-
-
-
-
-
 
 
 
