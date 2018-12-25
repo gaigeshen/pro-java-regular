@@ -173,4 +173,20 @@ This Pattern object allows you to create a Matcher object for a given string.
 This Matcher object then allows you to do regex operations on a String.
 
 
+5. Finding duplicated words
+The following regular expression matches duplicated words.
+\b(\w+)\s+\1\b
 
+\b is a word boundary and \1 references to the captured match of the first group, i.e., the first word.
+The (?!-in)\b(\w+) \1\b finds duplicate words if they do not start with "-in".
+TIP:Add (?s) to search across multiple lines.
+
+6. Finding elements which start in a new line
+The following regular expression allows you to find the "title" word, in case it starts in a new line, potentially with leading spaces.
+(\n\s*)title
+
+7. Finding (Non-Javadoc) statements
+Sometimes (Non-Javadoc) are used in Java source code to indicate that the method overrides a super method.
+As of Java 1.6 this can be done via the @Override annotation and it is possible to remove these statements from your code.
+The following regular expression can be used to identify these statements.
+(?s) /\* \(non-Javadoc\).*?\*/
